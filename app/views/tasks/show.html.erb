@@ -1,9 +1,11 @@
-Details
+Task show
 <h1><%= @task.title %></h1>
 <h2><%= @task.details %></h2>
 
+<%= link_to "Update", edit_task_path(@task) %>
 
-<%= link_to "Back", tasks_path %>
+
+<%= link_to "Back to Overview", tasks_path %>
 
 <% link_to "Delete #{@task.title}",
 task_path(@task),

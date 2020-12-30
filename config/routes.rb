@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # devise_for :users
+  root to: 'pages#home'
   get "tasks", to: "tasks#index"
   post "tasks", to: "tasks#create"
   get "tasks/new", to: "tasks#new", as: :new_task

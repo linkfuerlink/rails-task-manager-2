@@ -1,7 +1,10 @@
-<h1>create new task</h1>
+<div class='container mt-5'>
+  <h1>Create new task</h1>
 
-<%= simple_form_for(@task) do |f| %>
-<%= f.input :title %>
-<%= f.input :details %>
-<%= f.submit %>
-<% end %>
+  <%= render 'form', task: @task %>
+
+  <hr>
+  <%= link_to tasks_path do %>
+    <i class="fa fa-history"></i> Back to list
+  <% end %>
+</div>

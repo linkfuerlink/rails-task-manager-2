@@ -1,9 +1,10 @@
+<div class='container mt-5'>
 Task show
 <h1><%= @task.title %></h1>
 <h2><%= @task.details %></h2>
 
 <%= link_to "Update", edit_task_path(@task) %>
-
+<br>
 
 <%= link_to "Back to Overview", tasks_path %>
 
@@ -11,3 +12,5 @@ Task show
 task_path(@task),
 method: :delete,
 data: {confirm: "Are you sure?"} %>
+
+</div>

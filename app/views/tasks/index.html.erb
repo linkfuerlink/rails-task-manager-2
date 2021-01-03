@@ -1,22 +1,36 @@
 
 <div class="container mt-5">
+  <div class="row">
+    <div class="col-12 col-lg-6 mb-5">
+      <h1>My To Dos</h1>
+      <% if @tasks.blank? %>
+        <p>Add your first task now and start rocking!</p>
+      <% else %>
+      <div class="card mt-2">
+        <% @tasks.each do |task|  %>
 
-<h1>My To Dos</h1>
-<ul>
-  <% @tasks.each do |task|  %>
-  <li>
-    <% if task.completed %>
-        <i class="fa fa-check-square-o"></i>
-    <% else %>
-        <i class="fa fa-square-o"></i>
-    <% end %>
-    <%= link_to task.title, task_path(task) %>
-    <%= link_to task_path(task.id), method: :delete, data: { confirm: "Delete #{task.title}?" } do %>
-      <i class="fa fa-trash-o" aria-hidden="true"></i>
-    <% end %>
-  </li>
-  <% end %>
-</ul>
-<br>
-<%= link_to 'Add task', new_task_path %>
+            <li>
+              <% if task.completed %>
+                  <i class="fa fa-check-square-o"></i>
+              <% else %>
+                  <i class="fa fa-square-o"></i>
+              <% end %>
+              <%= link_to task.title, task_path(task) %>
+              <%= link_to task_path(task.id), method: :delete, data: { confirm: "Delete #{task.title}?" } do %>
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+              <% end %>
+            </li>
+        <% end %>
+      <% end %>
+      </div>
+    </div>
+
+
+
+    <div class="col-12 col-lg-6">
+      <h1>Add new task</h1>
+      <%= render 'form', task: @task %>
+    </div>
+  </div>
+
 </div>

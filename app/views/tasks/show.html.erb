@@ -3,12 +3,14 @@ Task
 <h1><%= @task.title %></h1>
 Details
 <h2><%= @task.details %></h2>
+<h5>
 <% if @task.completed %>
   <i class="fa fa-check-square-o"> Completed</i>
 <% else %>
   <i class="fa fa-square-o"> Not completed</i>
 <% end %>
 <br>
+</h5>
 
   <%= link_to "Update", edit_task_path(@task), class: "btn btn-secondary" %>
 
